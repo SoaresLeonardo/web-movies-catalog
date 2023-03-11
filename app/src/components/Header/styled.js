@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 80px;
-  border-bottom: 1px solid #54555c;
+  border-bottom: 1px solid #1c1c1e;
 `;
 export const Content = styled.div`
   display: flex;
@@ -59,7 +59,7 @@ export const Menu = styled.div`
 `;
 export const Link = styled.div``;
 export const SearchMovieContainer = styled.div`
-  background-color: #22252f;
+  background-color: #151515;
   font-size: 1.3rem;
   padding: 14px;
   border-radius: 18px;
