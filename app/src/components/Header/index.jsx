@@ -15,7 +15,7 @@ export default function Header() {
     <Container>
       <Content>
         <TitleContainer>
-          <Title>MV</Title>
+          <Title>Movies API</Title>
         </TitleContainer>
         <SearchMovieContainer>
           <InputSearch>
