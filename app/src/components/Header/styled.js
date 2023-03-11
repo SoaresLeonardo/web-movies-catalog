@@ -22,42 +22,7 @@ export const TitleContainer = styled.div`
 export const Title = styled.div`
   font-size: 1.4rem;
 `;
-export const HeaderLinks = styled.nav`
-  display: flex;
-  gap: 30px;
-  @media (max-width: 560px) {
-    flex-direction: column;
-    color: white;
-    background-color: #6e57e0;
-    position: fixed;
-    height: 60%;
-    gap: 0px;
-    top: 0;
-    right: 0px;
-    width: 60%;
-    height: 100vh;
-    right: ${(props) => (props.sidebar ? "0" : "-100%")};
-    transition: 0.3s;
-    a {
-      margin-top: 80px;
-      margin-left: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      color: white;
-    }
-  }
-`;
-export const Menu = styled.div`
-  font-size: 20px;
-  display: none;
-  cursor: pointer;
-  color: white;
-  @media (max-width: 560px) {
-    display: flex;
-  }
-`;
-export const Link = styled.div``;
+
 export const SearchMovieContainer = styled.div`
   background-color: #151515;
   font-size: 1.3rem;
@@ -72,6 +37,18 @@ export const SearchMovieContainer = styled.div`
     outline: none;
     color: white;
     font-size: 1rem;
+    width: 100%;
+  }
+  @media (max-width: 540px) {
+    width: 50%;
   }
 `;
 export const InputSearch = styled.div``;
+export const IconSearch = styled.button`
+  background-color: inherit;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  margin-left: 10px;
+  cursor: pointer;
+`;
