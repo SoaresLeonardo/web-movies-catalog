@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { CardContainer, CardImage, CardTitle, Container } from "./styled";
+import {
+  CardContainer,
+  CardImage,
+  CardTitle,
+  ContainerHome,
+  Content,
+  Title,
+  TitleContainer,
+} from "./styled";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const apiUrl = import.meta.env.VITE_URL;
@@ -25,16 +33,21 @@ export default function Home() {
   }, []);
 
   return (
-    <Container>
-      {dataMovies.map((item) => (
-        <CardContainer key={item.id}>
-          <CardImage
-            src={`${movieImage}${item.poster_path}`}
-            alt={item.title}
-          />
-          <CardTitle>{item.title}</CardTitle>
-        </CardContainer>
-      ))}
-    </Container>
+    <ContainerHome>
+      <TitleContainer>
+        <Title>Popular movies</Title>
+      </TitleContainer>
+      <Content>
+        {dataMovies.map((item) => (
+          <CardContainer key={item.id}>
+            <CardImage
+              src={`${movieImage}${item.poster_path}`}
+              alt={item.title}
+            />
+            <CardTitle>{item.title}</CardTitle>
+          </CardContainer>
+        ))}
+      </Content>
+    </ContainerHome>
   );
 }

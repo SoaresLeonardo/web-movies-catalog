@@ -1,9 +1,21 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const ContainerHome = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+export const Title = styled.h1``;
+export const TitleContainer = styled.div`
+ margin: 20px 0 20px;
+`;
+
+export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1400px;
 `;
 
 export const CardContainer = styled.div`
