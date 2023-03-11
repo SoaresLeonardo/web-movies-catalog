@@ -18,8 +18,6 @@ export default function Home() {
   const [dataMovies, setDataMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const movieImage = "https://image.tmdb.org/t/p/w500";
-
-  console.log(dataMovies);
   const fetchData = async (url) => {
     setLoading(true);
     try {
@@ -55,7 +53,7 @@ export default function Home() {
         <Content>
           {dataMovies &&
             dataMovies.map((item) => (
-              <CardContainer key={item.id}>
+              <CardContainer onClick={() => console.log("click")} key={item.id}>
                 <CardImage
                   src={`${movieImage}${item.poster_path}`}
                   alt={item.title}
