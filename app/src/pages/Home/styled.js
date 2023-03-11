@@ -31,6 +31,11 @@ export const CardContainer = styled.div`
   flex-direction: column;
   margin: 16px 16px 0;
   align-items: center;
+  transition: 0.2s;
+
+  &:hover {
+    transform:scale(1.1);
+  }
 `;
 
 export const CardImage = styled.img`
