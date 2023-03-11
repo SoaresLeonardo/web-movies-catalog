@@ -6,6 +6,7 @@ import {
   TitleContainer,
   SearchMovieContainer,
   InputSearch,
+  IconSearch,
 } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -21,8 +22,9 @@ export default function Header() {
           <InputSearch>
             <input type="text" placeholder="Search" />
           </InputSearch>
-
-          <AiOutlineSearch />
+          <IconSearch>
+            <AiOutlineSearch />
+          </IconSearch>
         </SearchMovieContainer>
       </Content>
     </Container>
