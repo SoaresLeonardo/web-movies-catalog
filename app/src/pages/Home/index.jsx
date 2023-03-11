@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
+import Loading from "../../components/Loading";
 import {
   CardContainer,
   CardImage,
   CardTitle,
   ContainerHome,
   Content,
-  LoadingContainer,
   Title,
   TitleContainer,
 } from "./styled";
@@ -37,11 +38,7 @@ export default function Home() {
   }, []);
 
   if (loading) {
-    return (
-      <LoadingContainer>
-        <Title>Loading...</Title>
-      </LoadingContainer>
-    );
+    return <Loading />;
   }
 
   return (
@@ -54,10 +51,12 @@ export default function Home() {
           {dataMovies &&
             dataMovies.map((item) => (
               <CardContainer onClick={() => console.log("click")} key={item.id}>
-                <CardImage
-                  src={`${movieImage}${item.poster_path}`}
-                  alt={item.title}
-                />
+                <Link to={`details/${item.id}`}>
+                  <CardImage
+                    src={`${movieImage}${item.poster_path}`}
+                    alt={item.title}
+                  />
+                </Link>
                 <CardTitle>{item.title}</CardTitle>
               </CardContainer>
             ))}
