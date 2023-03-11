@@ -6,6 +6,7 @@ export const ContainerFooter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px;
 `;
 export const Content = styled.div``;
 export const Title = styled.p``;

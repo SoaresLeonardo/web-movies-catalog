@@ -8,7 +8,7 @@ export const ContainerHome = styled.div`
 `;
 export const Title = styled.h1``;
 export const TitleContainer = styled.div`
- margin: 20px 0 20px;
+  margin: 20px 0 20px;
 `;
 
 export const Content = styled.div`
@@ -34,7 +34,7 @@ export const CardContainer = styled.div`
   transition: 0.2s;
 
   &:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
   }
 `;
 
@@ -49,4 +49,11 @@ export const CardTitle = styled.h3`
   font-weight: bold;
   margin: 0 0 16px;
   text-align: center;
+`;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 `;
