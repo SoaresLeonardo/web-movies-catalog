@@ -45,6 +45,7 @@ export default function Search() {
   };
 
   useEffect(() => {
+    if (!query) return;
     const searchMovieURL = `${apiUrl}?api_key=${apiKey}&query=${query}`;
     fetchData(searchMovieURL);
   }, [query]);
@@ -56,7 +57,13 @@ export default function Search() {
 
   // Caso não for encontrado o a pesquisa do usuário o retorno será:
   if (dataMovies.length < 1) {
-    return <NotFound text={`Parece que não foi possível encontrar ${query}`} />;
+    return (
+      <NotFound
+        text={`Não foi possível encontrar ${
+          query || "sua pesquisa"
+        }`}
+      />
+    );
   }
 
   return (
