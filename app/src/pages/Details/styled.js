@@ -10,6 +10,12 @@ export const Content = styled.div`
   max-width: 1400px;
   justify-content: space-around;
   padding: 20px;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 export const DetailsIntro = styled.div`
   width: 40%;
@@ -18,8 +24,17 @@ export const DetailsIntro = styled.div`
   text-align: start;
   justify-content: center;
 
-  p, span {
+  p,
+  span {
     padding-bottom: 20px;
+  }
+
+  @media (max-width: 968px) {
+    width: 60%;
+  }
+
+  @media (max-width: 544px) {
+    width: 90%;
   }
 `;
 export const Title = styled.h1`
@@ -30,7 +45,14 @@ export const ReleaseDate = styled.span``;
 export const DetailsImage = styled.div`
   width: 25%;
   img {
-    width: 100%;
+    width: 350px;
+  }
+
+  @media (max-width: 968px) {
+    img {
+      width: 100%;
+    }
+    width: 60%;
   }
 `;
 
@@ -48,4 +70,11 @@ export const ExitButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const NotFoundDetails = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 `;
