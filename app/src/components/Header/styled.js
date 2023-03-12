@@ -23,7 +23,7 @@ export const Title = styled.div`
   font-size: 1.4rem;
 `;
 
-export const SearchMovieContainer = styled.div`
+export const SearchMovieContainer = styled.form`
   background-color: #151515;
   font-size: 1.3rem;
   padding: 14px;

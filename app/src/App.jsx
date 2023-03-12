@@ -8,15 +8,17 @@ import {
   Routes as Switch,
   Route,
 } from "react-router-dom";
+import Search from "./pages/Search";
 
 function App() {
   return (
     <>
-      <Header />
       <Router>
+        <Header />
         <Switch>
           <Route path="/" element={<Home />} />
           <Route path="/details/:id?" element={<Details />} />
+          <Route path="/search/:query?" element={<Search />} />
         </Switch>
       </Router>
     </>

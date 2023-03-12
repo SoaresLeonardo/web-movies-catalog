@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Content,
@@ -9,20 +9,38 @@ import {
   IconSearch,
 } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   // const [search, setSearch] = useState(false);
+
+  const [inputSearch, setInputSearch] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!inputSearch) return;
+
+    navigate(`/search?query=${inputSearch}`, { replace: true });
+    setInputSearch("");
+  };
+
+  // console.log(inputSearch);
   return (
     <Container>
       <Content>
         <TitleContainer>
           <Title>Movies API</Title>
         </TitleContainer>
-        <SearchMovieContainer>
+        <SearchMovieContainer onSubmit={handleSubmit}>
           <InputSearch>
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              value={inputSearch}
+              placeholder="Search"
+              onChange={(e) => setInputSearch(e.target.value)}
+            />
           </InputSearch>
-          <IconSearch>
+          <IconSearch type="submit">
             <AiOutlineSearch />
           </IconSearch>
         </SearchMovieContainer>
