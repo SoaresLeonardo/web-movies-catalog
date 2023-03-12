@@ -21,8 +21,8 @@ export default function Search() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query");
 
-   // Configurando o título da página
-   document.title = `Search | ${query || ''} `;
+  // Configurando o título da página
+  document.title = `Search | ${query || ""} `;
 
   // Estado para receber os filmes correspondente a pesquisa
   const [dataMovies, setDataMovies] = useState([]);
@@ -60,7 +60,7 @@ export default function Search() {
   }
 
   // Caso não for encontrado o a pesquisa do usuário o retorno será:
-  if (dataMovies.length < 1) {
+  if (dataMovies.length === 0) {
     return <NotFound text="Não foi possivel encontrar sua pesquisa" />;
   }
 
