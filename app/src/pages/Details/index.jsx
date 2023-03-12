@@ -9,7 +9,6 @@ import {
   DetailsIntro,
   Duration,
   ExitButton,
-  NotFoundDetails,
   ReleaseDate,
   Title,
 } from "./styled";
@@ -20,6 +19,7 @@ const apiUrl = import.meta.env.VITE_DETAILS;
 
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import Loading from "../../components/Loading";
+import NotFound from "../../components/NotFound";
 
 export default function Details() {
   // Recebendo o id que foi enviado na URL
@@ -65,11 +65,7 @@ export default function Details() {
 
   // Caso não ouver id, retorna esse conteúdo:
   if (!id) {
-    return (
-      <NotFoundDetails>
-        <Title>Ops! ouve um erro ao ver mais detalhes</Title>
-      </NotFoundDetails>
-    );
+    return <NotFound text="Ops!, ouve um erro ao ver mais detalhes" />;
   }
 
   // Caso o id enviado for inválido alguma chave do objeto DATAMOVIE será undefined podendo ocorrer um erro na aplicação
@@ -79,11 +75,7 @@ export default function Details() {
       Object.prototype.hasOwnProperty.call(dataMovie, chave) &&
       !dataMovie[chave]
     ) {
-      return (
-        <NotFoundDetails>
-          <Title>Ops! ouve um erro ao ver mais detalhes</Title>
-        </NotFoundDetails>
-      );
+      return <NotFound text="Ops!, ouve um erro ao ver mais detalhes" />;
     }
   }
 
