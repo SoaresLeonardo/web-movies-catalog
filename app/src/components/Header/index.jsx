@@ -9,7 +9,7 @@ import {
   IconSearch,
 } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
   // const [search, setSearch] = useState(false);
@@ -29,7 +29,9 @@ export default function Header() {
     <Container>
       <Content>
         <TitleContainer>
-          <Title>Movies API</Title>
+          <Link to="/">
+            <Title>Movies API</Title>
+          </Link>
         </TitleContainer>
         <SearchMovieContainer onSubmit={handleSubmit}>
           <InputSearch>
