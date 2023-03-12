@@ -16,15 +16,17 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const apiUrl = import.meta.env.VITE_API_SEARCH;
 
 export default function Search() {
+  // Recebendo o query(a pesquisa) que o usuário pesquisou no input...
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query");
 
+  // Estado para receber os filmes correspondente a pesquisa
   const [dataMovies, setDataMovies] = useState([]);
+  // URL base para acessar a foto do filme
+  const movieImage = "https://image.tmdb.org/t/p/w500";
 
   // Estado de loading...
   const [loading, setLoading] = useState(false);
-  // URL base para acessar a foto do filme
-  const movieImage = "https://image.tmdb.org/t/p/w500";
 
   const fetchData = async (url) => {
     setLoading(true);
@@ -45,6 +47,7 @@ export default function Search() {
     const searchMovieURL = `${apiUrl}?api_key=${apiKey}&query=${query}`;
     fetchData(searchMovieURL);
   }, [query]);
+      // Configurando o useEffect para observar o query; a cada modificação/pesquisa
 
   if (loading) {
     return <Loading />;
