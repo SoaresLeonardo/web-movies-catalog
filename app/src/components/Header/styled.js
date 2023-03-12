@@ -21,6 +21,10 @@ export const TitleContainer = styled.div`
 `;
 export const Title = styled.div`
   font-size: 1.4rem;
+
+  &:hover {
+    color: #c59208;
+  }
 `;
 
 export const SearchMovieContainer = styled.form`
@@ -51,4 +55,8 @@ export const IconSearch = styled.button`
   font-size: inherit;
   margin-left: 10px;
   cursor: pointer;
+
+  &:hover {
+    color: #c59208;
+  }
 `;
