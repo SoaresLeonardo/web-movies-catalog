@@ -58,13 +58,7 @@ export default function Search() {
 
   // Caso não for encontrado o a pesquisa do usuário o retorno será:
   if (dataMovies.length < 1) {
-    return (
-      <NotFound
-        text={`Não foi possível encontrar ${
-          query || "sua pesquisa"
-        }`}
-      />
-    );
+    return <NotFound text="Não foi possivel encontrar sua pesquisa" />;
   }
 
   return (
