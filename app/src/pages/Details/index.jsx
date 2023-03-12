@@ -26,6 +26,10 @@ export default function Details() {
   const { id } = useParams();
 
   const [dataMovie, setDataMovie] = useState({});
+
+  // Configurando o título da página
+  document.title = `Details | ${dataMovie.title || ''}`;
+
   // URL base para acessar a foto do filme
   const movieImage = "https://image.tmdb.org/t/p/w500";
   // Estado de loading...

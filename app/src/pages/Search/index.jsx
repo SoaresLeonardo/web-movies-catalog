@@ -21,6 +21,9 @@ export default function Search() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query");
 
+   // Configurando o título da página
+   document.title = `Search | ${query || ''} `;
+
   // Estado para receber os filmes correspondente a pesquisa
   const [dataMovies, setDataMovies] = useState([]);
   // URL base para acessar a foto do filme

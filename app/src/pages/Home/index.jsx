@@ -17,6 +17,8 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const apiUrl = import.meta.env.VITE_URL;
 
 export default function Home() {
+  document.title = "Movies API";
+
   const [dataMovies, setDataMovies] = useState([]);
   // Estado de loading...
   const [loading, setLoading] = useState(false);
