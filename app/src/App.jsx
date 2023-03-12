@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" element={<Home />} />
-          <Route path="/details/:id" element={<Details />} />
+          <Route path="/details/:id?" element={<Details />} />
         </Switch>
       </Router>
     </>
