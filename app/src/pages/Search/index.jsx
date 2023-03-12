@@ -21,8 +21,6 @@ export default function Search() {
 
   const [dataMovies, setDataMovies] = useState([]);
 
-  console.log(dataMovies);
-
   // Estado de loading...
   const [loading, setLoading] = useState(false);
   // URL base para acessar a foto do filme
