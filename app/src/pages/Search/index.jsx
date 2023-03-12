@@ -45,6 +45,7 @@ export default function Search() {
   };
 
   useEffect(() => {
+    // Caso não for enviada uma pesquisa para a URL o fetch não é executado
     if (!query) return;
     const searchMovieURL = `${apiUrl}?api_key=${apiKey}&query=${query}`;
     fetchData(searchMovieURL);
