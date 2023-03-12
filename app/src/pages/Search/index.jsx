@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Loading from "../../components/Loading";
+import NotFound from "../../components/NotFound";
 import {
   CardContainer,
   CardImage,
@@ -47,10 +48,15 @@ export default function Search() {
     const searchMovieURL = `${apiUrl}?api_key=${apiKey}&query=${query}`;
     fetchData(searchMovieURL);
   }, [query]);
-      // Configurando o useEffect para observar o query; a cada modificação/pesquisa
+  // Configurando o useEffect para observar o query; a cada modificação/pesquisa
 
   if (loading) {
     return <Loading />;
+  }
+
+  // Caso não for encontrado o a pesquisa do usuário o retorno será:
+  if (dataMovies.length < 1) {
+    return <NotFound text={`Parece que não foi possível encontrar ${query}`} />;
   }
 
   return (
