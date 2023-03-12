@@ -50,4 +50,3 @@ export const CardTitle = styled.h3`
   margin: 0 0 16px;
   text-align: center;
 `;
-

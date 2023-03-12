@@ -60,9 +60,10 @@ export default function Home() {
                 <CardTitle>{item.title}</CardTitle>
               </CardContainer>
             ))}
+             <Footer />
         </Content>
       </ContainerHome>
-      <Footer />
+     
     </>
   );
 }
