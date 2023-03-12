@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import { Link, useParams } from "react-router-dom";
 import {
   Container,
   Content,
@@ -102,12 +102,11 @@ export default function Details() {
           <Description>{dataMovie.overview}</Description>
           <Duration>{`${dataMovie.runtime} minutes`}</Duration>
           <ReleaseDate>{dataMovie.releaseDate}</ReleaseDate>
-          <Link to="/">
-            <ExitButton>
-              <AiOutlineArrowLeft style={{ marginRight: 5 }} />
-              Go Back
-            </ExitButton>
-          </Link>
+          {/* Redirecionando o usuário para a página anterior*/}
+          <ExitButton onClick={() => window.history.back()}>
+            <AiOutlineArrowLeft style={{ marginRight: 5 }} />
+            Go Back
+          </ExitButton>
         </DetailsIntro>
       </Content>
     </Container>
